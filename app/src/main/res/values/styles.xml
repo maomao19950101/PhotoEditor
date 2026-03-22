@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用主题 -->
+    <style name="Theme.AIPhotoEditor" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 主题色 -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSecondary">@color/accent</item>
+
+        <!-- 窗口 -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/background</item>
+
+        <!-- 组件样式 -->
+        <item name="materialButtonStyle">@style/Widget.AIPhotoEditor.Button</item>
+        <item name="cardViewStyle">@style/Widget.AIPhotoEditor.CardView</item>
+        <item name="textInputStyle">@style/Widget.AIPhotoEditor.TextInput</item>
+
+        <!-- 状态栏 -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- 按钮样式 -->
+    <style name="Widget.AIPhotoEditor.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <!-- 轮廓按钮 -->
+    <style name="Widget.AIPhotoEditor.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/primary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="cornerRadius">24dp</item>
+    </style>
+
+    <!-- 文字按钮 -->
+    <style name="Widget.AIPhotoEditor.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <!-- 卡片样式 -->
+    <style name="Widget.AIPhotoEditor.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- 输入框样式 -->
+    <style name="Widget.AIPhotoEditor.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- 工具栏样式 -->
+    <style name="Widget.AIPhotoEditor.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="navigationIconTint">@color/white</item>
+    </style>
+
+    <!-- 底部导航样式 -->
+    <style name="Widget.AIPhotoEditor.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.AIPhotoEditor.BottomNav.Indicator</item>
+    </style>
+
+    <!-- 底部导航指示器 -->
+    <style name="Widget.AIPhotoEditor.BottomNav.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primary_light</item>
+    </style>
+
+    <!-- SeekBar样式 -->
+    <style name="Widget.AIPhotoEditor.SeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+    </style>
+
+    <!-- 毛玻璃效果卡片 -->
+    <style name="Widget.AIPhotoEditor.Card.Glass" parent="Widget.AIPhotoEditor.CardView">
+        <item name="cardBackgroundColor">@color/overlay</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+
+    <!-- 滤镜预览卡片 -->
+    <style name="Widget.AIPhotoEditor.FilterCard" parent="Widget.AIPhotoEditor.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <!-- 圆形图片 -->
+    <style name="Widget.AIPhotoEditor.CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- 浮动操作按钮 -->
+    <style name="Widget.AIPhotoEditor.Fab" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/accent</item>
+        <item name="tint">@color/white</item>
+        <item name="elevation">6dp</item>
+    </style>
+
+    <!-- Chip样式 -->
+    <style name="Widget.AIPhotoEditor.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="checkedIconTint">@color/white</item>
+    </style>
+
+    <!-- 对话框样式 -->
+    <style name="Widget.AIPhotoEditor.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="android:background">@color/surface</item>
+    </style>
+
+    <!-- 全屏主题 -->
+    <style name="Theme.AIPhotoEditor.Fullscreen" parent="Theme.AIPhotoEditor">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <!-- 透明主题 -->
+    <style name="Theme.AIPhotoEditor.Transparent" parent="Theme.AIPhotoEditor">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardPhoto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imagePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/photo" />
+
+        <View
+            android:id="@+id/viewOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/overlay"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/checkSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="4dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPhotoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/overlay"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPhotoSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_badge"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnRemove"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|end"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="@color/error"
+            android:contentDescription="@string/remove"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom|end"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_share"
+            app:tint="@color/white"
+            android:contentDescription="@string/share"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

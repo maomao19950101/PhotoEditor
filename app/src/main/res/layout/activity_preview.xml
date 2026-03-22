@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/imagePreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/preview" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/overlay"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/white"
+        app:title="@string/preview"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/back"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/white"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            app:icon="@drawable/ic_share"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/compare"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="@color/white"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>

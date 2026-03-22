@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/white"
+        app:menu="@menu/editor_menu"
+        app:title="@string/edit"
+        app:titleTextColor="@color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="200dp">
+
+        <ImageView
+            android:id="@+id/imagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/preview" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="16dp"
+            android:text="@string/long_press_compare"
+            android:textSize="12sp"
+            app:cornerRadius="20dp"
+            app:backgroundTint="@color/overlay" />
+    </FrameLayout>
+
+    <!-- 底部面板 -->
+    <FrameLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_bottom_sheet"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 拖动手柄 -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_drag_handle" />
+
+            <!-- 标签栏 -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/accent"
+                app:tabSelectedTextColor="@color/accent"
+                app:tabTextColor="@color/text_secondary" />
+
+            <!-- 滤镜面板 -->
+            <FrameLayout
+                android:id="@+id/panelFilters"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerFilters"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="8dp" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarIntensity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:max="100"
+                        android:progress="100" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- 美颜面板 -->
+            <ScrollView
+                android:id="@+id/panelBeauty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skin_smooth"
+                        android:textColor="@color/text_primary" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarSkinSmooth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/face_slim"
+                        android:textColor="@color/text_primary" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarFaceSlim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/eye_enlarge"
+                        android:textColor="@color/text_primary" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarEyeEnlarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/skin_whiten"
+                        android:textColor="@color/text_primary" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarSkinWhiten"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100" />
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- 调整面板 -->
+            <LinearLayout
+                android:id="@+id/panelAdjust"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- 调整参数 -->
+            </LinearLayout>
+
+            <!-- AI面板 -->
+            <LinearLayout
+                android:id="@+id/panelAi"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAiEnhance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/ai_enhance" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAiColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/smart_color" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRemoveObject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/remove_object" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReplaceSky"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/replace_sky" />
+            </LinearLayout>
+
+            <!-- 水印面板 -->
+            <LinearLayout
+                android:id="@+id/panelWatermark"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddWatermark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:text="@string/add_watermark" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

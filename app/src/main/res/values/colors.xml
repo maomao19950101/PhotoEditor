@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主题色 - 粉色渐变 -->
+    <color name="primary">#FF6B9D</color>
+    <color name="primary_dark">#C44569</color>
+    <color name="primary_light">#FFB6C1</color>
+    <color name="accent">#C44569</color>
+
+    <!-- 渐变色 -->
+    <color name="gradient_start">#FF6B9D</color>
+    <color name="gradient_end">#C44569</color>
+
+    <!-- 功能色 -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+
+    <!-- 文字颜色 -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+
+    <!-- 背景色 -->
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- 常用色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="overlay">#80000000</color>
+
+    <!-- 滤镜相关 -->
+    <color name="filter_overlay">#40FFFFFF</color>
+    <color name="filter_selected">#FF6B9D</color>
+
+    <!-- 底部导航 -->
+    <color name="bottom_nav_selected">#FF6B9D</color>
+    <color name="bottom_nav_unselected">#757575</color>
+
+    <!-- 按钮 -->
+    <color name="button_enabled">#FF6B9D</color>
+    <color name="button_disabled">#BDBDBD</color>
+    <color name="button_pressed">#C44569</color>
+
+    <!-- 分隔线 -->
+    <color name="divider">#E0E0E0</color>
+
+    <!-- 网红色调 -->
+    <color name="warm_pink">#FFB6C1</color>
+    <color name="deep_pink">#FF1493</color>
+    <color name="soft_purple">#E6E6FA</color>
+    <color name="lavender">#D8BFD8</color>
+    <color name="rose">#FFE4E1</color>
+    <color name="coral">#FF7F50</color>
+    <color name="peach">#FFDAB9</color>
+</resources>

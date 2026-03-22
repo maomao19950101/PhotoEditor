@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI修图大师</string>
+
+    <!-- 通用 -->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="share">分享</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="loading">加载中...</string>
+    <string name="processing">处理中...</string>
+    <string name="please_wait">请稍候</string>
+    <string name="success">成功</string>
+    <string name="error">错误</string>
+
+    <!-- 相册 -->
+    <string name="gallery">相册</string>
+    <string name="no_photos">暂无照片</string>
+    <string name="selected_count">已选择 %d 张</string>
+    <string name="select_all">全选</string>
+    <string name="batch_edit">批量编辑</string>
+    <string name="import_photos">导入照片</string>
+    <string name="sort_by">排序方式</string>
+
+    <!-- 编辑 -->
+    <string name="filters">滤镜</string>
+    <string name="beauty">美颜</string>
+    <string name="adjust">调整</string>
+    <string name="ai_features">AI功能</string>
+    <string name="watermark">水印</string>
+    <string name="intensity">强度</string>
+    <string name="skin_smooth">磨皮</string>
+    <string name="face_slim">瘦脸</string>
+    <string name="eye_enlarge">大眼</string>
+    <string name="skin_whiten">美白</string>
+    <string name="undo">撤销</string>
+    <string name="redo">重做</string>
+    <string name="reset">重置</string>
+    <string name="compare">对比</string>
+    <string name="long_press_compare">长按对比</string>
+    <string name="preview">预览</string>
+    <string name="photo">照片</string>
+
+    <!-- 滤镜 -->
+    <string name="select_filter">选择滤镜</string>
+    <string name="filter_qingtou">清透感</string>
+    <string name="filter_jiaopian">胶片复古</string>
+    <string name="filter_rixi">日系清新</string>
+    <string name="filter_fashi">法式浪漫</string>
+    <string name="filter_yejing">夜景霓虹</string>
+    <string name="filter_ins">ins风</string>
+    <string name="filter_heibai">黑白经典</string>
+    <string name="filter_meishi">美食鲜艳</string>
+    <string name="filter_renxiang">人像美颜</string>
+    <string name="filter_fengjing">风景大片</string>
+
+    <!-- AI功能 -->
+    <string name="ai_enhance">AI增强</string>
+    <string name="smart_color">智能调色</string>
+    <string name="remove_object">去路人</string>
+    <string name="replace_sky">换天空</string>
+    <string name="add_watermark">添加水印</string>
+
+    <!-- 批量处理 -->
+    <string name="batch_processing">批量处理</string>
+    <string name="start_processing">开始处理</string>
+    <string name="processing_complete">处理完成</string>
+    <string name="view_results">查看结果</string>
+    <string name="export_format">导出格式</string>
+    <string name="naming_rule">命名规则</string>
+
+    <!-- 结果 -->
+    <string name="results">处理结果</string>
+    <string name="share_all">分享全部</string>
+    <string name="save_to_gallery">保存到相册</string>
+
+    <!-- 底部导航 -->
+    <string name="nav_gallery">相册</string>
+    <string name="nav_batch">批量</string>
+    <string name="nav_history">历史</string>
+
+    <!-- 提示 -->
+    <string name="save_success">保存成功</string>
+    <string name="save_failed">保存失败</string>
+    <string name="storage_insufficient">存储空间不足</string>
+    <string name="processing_cancelled">处理已取消</string>
+
+    <!-- 水印 -->
+    <string name="text_watermark">文字水印</string>
+    <string name="image_watermark">图片水印</string>
+    <string name="date_watermark">日期水印</string>
+    <string name="location_watermark">地点水印</string>
+</resources>

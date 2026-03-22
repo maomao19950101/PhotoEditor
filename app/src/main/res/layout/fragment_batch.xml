@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/white"
+        app:menu="@menu/batch_menu"
+        app:title="@string/batch_processing"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/panelControls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical">
+
+        <!-- 滤镜选择 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipQingtou"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_qingtou" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipJiaopian"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_jiaopian" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipRixi"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_rixi" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFashi"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_fashi" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipYejing"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_yejing" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipIns"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_ins" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvPhotoCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:text="0 张照片"
+            android:textColor="@color/text_secondary" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:padding="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartProcessing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/start_processing"
+            app:cornerRadius="24dp" />
+    </LinearLayout>
+
+    <!-- 进度面板 -->
+    <LinearLayout
+        android:id="@+id/panelProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:indeterminate="true" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="0/0"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="0%"
+            android:textColor="@color/accent"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCurrentFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/text_secondary"
+            android:ellipsize="middle"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/tvTimeRemaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/text_secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelProcessing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/cancel"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+    </LinearLayout>
+
+    <!-- 结果面板 -->
+    <LinearLayout
+        android:id="@+id/panelResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_check_circle"
+            app:tint="@color/success" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/processing_complete"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResultSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/text_secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/view_results" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
