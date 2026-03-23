@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.photoeditor"
+    namespace = "com.photo.editor"
     compileSdk = 34
 
     defaultConfig {
